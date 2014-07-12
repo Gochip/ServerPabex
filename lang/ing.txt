@@ -1,0 +1,14 @@
+group_name:Group name
+max_num:Max num
+group_id:Group id
+admin_id:Admin ids
+password:Password
+client:Client
+ip:IP
+the_client:The client
+not_exists:not exists
+name:Name
+groups:Groups
+current_clients:Current clients
+current_groups:Current groups
+invalid_command:Invalid command
