@@ -8,7 +8,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Esta clase representa un intermediario del lenguaje en el cual se va a
+ * manejar el servidor.
+ * 
+ * Esta clase toma la configuración del archivo config.txt, desde la línea
+ * language.
+ * 
  * @author Parisi Germán
  * @version 1.0
  */
