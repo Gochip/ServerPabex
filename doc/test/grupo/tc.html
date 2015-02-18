@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <title>TC 1</title>
+        <meta charset="UTF-8"/>
+        <style type="text/css">
+        table, th, td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        .casoDePrueba{
+            
+        }
+        .seccion{
+            border: 1px solid black; padding: 5px;
+        }
+        .codigo{
+            font-family: "Courier New", Courier, monospace;
+        }
+        .comentario{
+            color: gray;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    <body>
+        <h1 align="center">Casos de prueba con respecto al grupo</h1>
+        <p>Esta suite de casos de prueba se compone de todas las pruebas
+        referidas a las operaciones con grupos y clientes, tales como, 
+        crear grupo, agregar cliente, eliminar grupo, etc.<br />
+        Para ejecutar esta suite, primero se debe ejecutar el main del
+        ServerPabex y luego el main del ClientPabex.</p>
+        <hr />
+        <div class="casoDePrueba">
+            <h3>1- Creación de un grupo y repetición de cliente</h3><br />
+            <div class="seccion">
+                <h4>Descripción</h4>
+                <p>
+                    Un cliente X crea un grupo y él mismo intenta unirse.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Resultado esperado</h4>
+                <p>
+                    Error indicando que el cliente está duplicado en el grupo.
+                    Exactamente el error lanzado debería ser: DUPLICATE_IN_GROUP,
+                    cuyo código de error es 4.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Comandos a ejecutar</h4>
+                <p class="codigo">
+                    # CREATE_GROUP 'nombre_del_grupo' <span class="comentario">// Crea el grupo.</span><br />
+                    (MODO MAPA)# id_group <span class="comentario">// Da el id del grupo recién creado.</span><br />
+                    # JOIN 'id_group' <span class="comentario">// Se intenta unir al grupo.</span><br />
+                    (MODO MAPA)# error_info <span class="comentario">// Mensaje indicando duplicación del cliente.</span><br />
+                    (MODO MAPA)# error <span class="comentario">// Número de error 4 que corresponde a DUPLICATE_IN_GROUP.</span>
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Registros históricos</h4>
+                <label>Fecha de realización: <label>30/07/2014</label></label>
+                &nbsp;&nbsp;
+                <label>Autor: <label>Parisi Germán</label></label><br /><br />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>30/07/2014</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                        <tr>
+                            <td>18/02/2015</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="casoDePrueba">
+            <h3>2- Creación de un grupo y abandono de los clientes</h3><br />
+            <div class="seccion">
+                <h4>Descripción</h4>
+                <p>
+                    Un cliente X crea un grupo. Se unen 3 clientes. Luego abandonan
+                    todos los clientes incluso el cliente que lo creó, borrándose así el grupo.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Resultado esperado</h4>
+                <p>
+                    El grupo se borra el servidor. Los clientes ya no pertenecen al grupo creado.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Comandos a ejecutar</h4>
+                <p class="codigo">
+                    <span class="comentario">// Cliente 1</span><br />
+                    # CREATE_GROUP 'nombre_del_grupo' <span class="comentario">// Crea el grupo.</span><br />
+                    (MODO MAPA)# id_group <span class="comentario">// Da el id del grupo recién creado.</span><br /><br />
+                    <span class="comentario">// Cliente 2</span><br />
+                    # JOIN 'id_group' <span class="comentario">// Se une al grupo.</span><br />
+                    (MODO MAPA)# id_group <span class="comentario">// Retorna el 'id_group'.</span><br /><br />
+                    <span class="comentario">// Cliente 3</span><br />
+                    # JOIN 'id_group' <span class="comentario">// Se une al grupo.</span><br />
+                    (MODO MAPA)# id_group <span class="comentario">// Retorna el 'id_group'.</span><br /><br />
+                    <span class="comentario">// Cliente 4</span><br />
+                    # JOIN 'id_group' <span class="comentario">// Se une al grupo.</span><br />
+                    (MODO MAPA)# id_group <span class="comentario">// Retorna el 'id_group'.</span><br /><br />
+                    <span class="comentario">// Ahora los clientes abandonan...</span><br />
+                    <span class="comentario">// Cliente 1</span><br />
+                    # LEAVE_GROUP 'id_group' <span class="comentario">// Abandona el grupo.</span><br />
+                    # SHOW_GROUPS <span class="comentario">// Consulta los grupos. Debe existir el grupo 'id_group'.</span><br /><br />
+                    <span class="comentario">// Cliente 2</span><br />
+                    # LEAVE_GROUP 'id_group' <span class="comentario">// Abandona el grupo.</span><br />
+                    # SHOW_GROUPS <span class="comentario">// Consulta los grupos. Debe existir el grupo 'id_group'.</span><br /><br />
+                    <span class="comentario">// Cliente 3</span><br />
+                    # LEAVE_GROUP 'id_group' <span class="comentario">// Abandona el grupo.</span><br />
+                    # SHOW_GROUPS <span class="comentario">// Consulta los grupos. Debe existir el grupo 'id_group'.</span><br /><br />
+                    <span class="comentario">// Cliente 4</span><br />
+                    # LEAVE_GROUP 'id_group' <span class="comentario">// Abandona el grupo.</span><br />
+                    # SHOW_GROUPS <span class="comentario">// Consulta los grupos. No debe existir el grupo 'id_group'.</span><br /><br />
+                    <span class="comentario">// Servidor</span><br />
+                    # show_groups <span class="comentario">// Consulta los grupos en el servidor. No debe existir el grupo 'id_group'.</span>
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Registros históricos</h4>
+                <label>Fecha de realización: <label>18/02/2015</label></label>
+                &nbsp;&nbsp;
+                <label>Autor: <label>Parisi Germán</label></label><br /><br />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>18/02/2015</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+    </body>
+</html>

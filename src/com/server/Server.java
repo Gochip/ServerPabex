@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * Esta clase posee una clase interna que verifica la clave para establecer la
  * conexión.
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class Server {
@@ -35,11 +35,20 @@ public class Server {
      */
     private final String PASSWORD;
 
+    /**
+     * Contructor que inicializa el Server.
+     * @param pass Es la clave de conexión. 
+     * @param puerto Es el puerto por donde escuchará a los clientes.
+     */
     public Server(String pass, int puerto) {
         this.PASSWORD = pass;
         this.PORT = puerto;
     }
 
+    /**
+     * El server empieza a escuchar.
+     * @throws IOException Ocurre una IOException.
+     */
     public void start() throws IOException {
         ServerSocket ss = new ServerSocket(PORT);
 
@@ -51,13 +60,18 @@ public class Server {
         }
     }
 
+    /**
+     * Retorna el ServerController al cual se puede utilizar para obtener los
+     * datos actuales e históricos del servidor.
+     * @return 
+     */
     public Fachada getFachada() {
         return serverController;
     }
 
     /**
      * Esta clase determina si se debe aceptar a un cliente o no teniendo en
-     * cuenta la clave de framework.
+     * cuenta la clave de conexión.
      *
      * Si la clave es correcta entonces lo agrega en el ServerController. Caso
      * contrario, rechaza la conexión.

@@ -4,7 +4,7 @@ import java.util.Collection;
 
 /**
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public interface Fachada {
