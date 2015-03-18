@@ -69,15 +69,17 @@ public class JoinExecutor extends Executor {
 
         /*EJECUCIÓN*/
         if (ok) {
+            group.addClient(client);
+            client.addGroup(group);
             InformationResponse infResp = new InformationResponse();
             infResp.addId(client.getId());
             infResp.addSource("join");
             infResp.addValue("id_group", idGroup);
             for (ClientRunnable c : group.getClients()) {
-                c.send(infResp);
+                if(!c.equals(client)){
+                    c.send(infResp);
+                }
             }
-            group.addClient(client);
-            client.addGroup(group);
             resp.addValue("id_group", group.getId());
             resp.addValue("id_admin", group.getClientAdmin().getId());
         }
