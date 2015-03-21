@@ -159,5 +159,255 @@
             </div>
         </div>
         <hr />
+        <div class="casoDePrueba">
+            <h3>3- Unirse a un grupo que no exista</h3><br />
+            <div class="seccion">
+                <h4>Descripción</h4>
+                <p>
+                    Un cliente X intenta unirse a un grupo que no existe.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Resultado esperado</h4>
+                <p>
+                    El servidor devuelve el código de error: NOT_EXISTS_GROUP.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Comandos a ejecutar</h4>
+                <p class="codigo">
+                    <span class="comentario">// Cliente</span><br />
+                    # JOIN 'AAA' <span class="comentario">// Se une a un grupo que no existe.</span><br />
+                    (MODO MAPA)# error <span class="comentario">// Retorna el código de NOT_EXISTS_GROUP.</span><br />
+                    (MODO MAPA)# error_info <span class="comentario">// Retorna un mensaje de NOT_EXISTS_GROUP.</span><br /><br />
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Registros históricos</h4>
+                <label>Fecha de realización: <label>21/03/2015</label></label>
+                &nbsp;&nbsp;
+                <label>Autor: <label>Parisi Germán</label></label><br /><br />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21/03/2015</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="casoDePrueba">
+            <h3>4- Unirse a un grupo que está lleno</h3><br />
+            <div class="seccion">
+                <h4>Descripción</h4>
+                <p>
+                    Un cliente X intenta unirse a un grupo que esta lleno.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Resultado esperado</h4>
+                <p>
+                    El servidor devuelve el código de error: GROUP_IS_FULL.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Comandos a ejecutar</h4>
+                <p class="codigo">
+                    <span class="comentario">// Cliente 1</span><br />
+                    # CREATE_GROUP 'g1' -n '1'<span class="comentario">// Crea un grupo de un cliente.</span><br />
+                    
+                    <span class="comentario">// Cliente 2</span><br />
+                    # JOIN '000' <span class="comentario">// Se une a un grupo lleno.</span><br />
+                    (MODO MAPA)# error <span class="comentario">// Retorna el código de GROUP_IS_FULL.</span><br />
+                    (MODO MAPA)# error_info <span class="comentario">// Retorna un mensaje de GROUP_IS_FULL.</span><br /><br />
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Registros históricos</h4>
+                <label>Fecha de realización: <label>21/03/2015</label></label>
+                &nbsp;&nbsp;
+                <label>Autor: <label>Parisi Germán</label></label><br /><br />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21/03/2015</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="casoDePrueba">
+            <h3>5- Unirse a un grupo en el cual ya es parte</h3><br />
+            <div class="seccion">
+                <h4>Descripción</h4>
+                <p>
+                    Un cliente X intenta unirse a un grupo al cual ya pertenece.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Resultado esperado</h4>
+                <p>
+                    El servidor devuelve el código de error: DUPLICATE_IN_GROUP.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Comandos a ejecutar</h4>
+                <p class="codigo">
+                    <span class="comentario">// Cliente 1</span><br />
+                    # CREATE_GROUP 'g1'<span class="comentario">// Crea un grupo.</span><br />
+                    
+                    <span class="comentario">// Cliente 2</span><br />
+                    # JOIN '000' <span class="comentario">// Se une a un grupo.</span><br />
+                    (MODO MAPA)# exit
+                    
+                    # JOIN '000' <span class="comentario">// Intenta volverse a unir al mismo grupo.</span><br />
+                    (MODO MAPA)# error <span class="comentario">// Retorna el código de DUPLICATE_IN_GROUP.</span><br />
+                    (MODO MAPA)# error_info <span class="comentario">// Retorna un mensaje de DUPLICATE_IN_GROUP.</span><br /><br />
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Registros históricos</h4>
+                <label>Fecha de realización: <label>21/03/2015</label></label>
+                &nbsp;&nbsp;
+                <label>Autor: <label>Parisi Germán</label></label><br /><br />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21/03/2015</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="casoDePrueba">
+            <h3>6- Unirse a un grupo privado sin proporcionar clave</h3><br />
+            <div class="seccion">
+                <h4>Descripción</h4>
+                <p>
+                    Un cliente X intenta unirse a un grupo privado sin proporcionar una clave.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Resultado esperado</h4>
+                <p>
+                    El servidor devuelve el código de error: NOT_PASSWORD.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Comandos a ejecutar</h4>
+                <p class="codigo">
+                    <span class="comentario">// Cliente 1</span><br />
+                    # CREATE_GROUP 'g1' -p '123'<span class="comentario">// Crea un grupo privado.</span><br />
+                    
+                    <span class="comentario">// Cliente 2</span><br />
+                    # JOIN '000' <span class="comentario">// Se une a un grupo.</span><br />
+                    (MODO MAPA)# error <span class="comentario">// Retorna el código de NOT_PASSWORD.</span><br />
+                    (MODO MAPA)# error_info <span class="comentario">// Retorna un mensaje de NOT_PASSWORD.</span><br /><br />
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Registros históricos</h4>
+                <label>Fecha de realización: <label>21/03/2015</label></label>
+                &nbsp;&nbsp;
+                <label>Autor: <label>Parisi Germán</label></label><br /><br />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21/03/2015</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="casoDePrueba">
+            <h3>7- Unirse a un grupo privado proporcionando una clave incorrecta</h3><br />
+            <div class="seccion">
+                <h4>Descripción</h4>
+                <p>
+                    Un cliente X intenta unirse a un grupo privado proporcionando una clave incorrecta.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Resultado esperado</h4>
+                <p>
+                    El servidor devuelve el código de error: INVALID_KEY.
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Comandos a ejecutar</h4>
+                <p class="codigo">
+                    <span class="comentario">// Cliente 1</span><br />
+                    # CREATE_GROUP 'g1' -p '123'<span class="comentario">// Crea un grupo privado.</span><br />
+                    
+                    <span class="comentario">// Cliente 2</span><br />
+                    # JOIN '000' -p '12'<span class="comentario">// Se une a un grupo.</span><br />
+                    (MODO MAPA)# error <span class="comentario">// Retorna el código de INVALID_KEY.</span><br />
+                    (MODO MAPA)# error_info <span class="comentario">// Retorna un mensaje de INVALID_KEY.</span><br /><br />
+                <p>
+            </div>
+            <div class="seccion">
+                <h4>Registros históricos</h4>
+                <label>Fecha de realización: <label>21/03/2015</label></label>
+                &nbsp;&nbsp;
+                <label>Autor: <label>Parisi Germán</label></label><br /><br />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21/03/2015</td>
+                            <td>Parisi Germán</td>
+                            <td>Pasa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
     </body>
 </html>
