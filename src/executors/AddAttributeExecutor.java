@@ -7,10 +7,15 @@ import executors.response.InformationResponse;
 import syntactic.commands.AddAttributeCommand;
 
 /**
- * ADD_ATTRIBUTE 'key1, key2, key3' 'value1, value2, value3' 'YES|NO'
+ * ADD_ATTRIBUTE 'key1, key2, key3' 'value1, value2, value3' [-v 'true|false']
  *
- * YES: Avisar a los demás. NO: No avisar a los demás.
+ * YES: Avisar a los demás que están en mis grupos.
+ * NO: No avisar a los demás.
  *
+ * TABLA DE ERRORES:
+ * <ul>
+ *      <li>(10) INCORRECT_LENGTH_KEY_VALUE: La cantidad de claves difiere a la cantidad de valores.</li>
+ * </ul>
  *
  * @author Germán Parisi y Bertola Federico
  * @version 1.1

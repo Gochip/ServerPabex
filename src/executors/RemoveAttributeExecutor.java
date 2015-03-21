@@ -1,25 +1,25 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package executors;
 
 import executors.response.CommandResponse;
 import syntactic.commands.RemoveAttributeCommand;
 
 /**
- *
+ * REMOVE_ATTRIBUTE 'key1'
+ * 
+ * TABLA DE ERRORES:
+ * <ul>
+ *      <li>(9) NOT_EXISTS_KEY: No existe la clave.</li>
+ * </ul>
+ * 
  * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class RemoveAttributeExecutor extends Executor{
-private RemoveAttributeCommand cmd;
+    private RemoveAttributeCommand cmd;
 
     public RemoveAttributeExecutor(RemoveAttributeCommand cmd) {
         this.cmd = cmd;
     }
-
 
     @Override
     public Response execute() {
@@ -34,5 +34,4 @@ private RemoveAttributeCommand cmd;
         return resp;
         
     }
-
 }

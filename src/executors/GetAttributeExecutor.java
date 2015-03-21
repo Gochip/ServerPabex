@@ -5,6 +5,13 @@ import syntactic.commands.GetAttributeCommand;
 
 /**
  *
+ * GET_ATTRIBUTE 'key1'
+ * 
+ * TABLA DE ERRORES:
+ * <ul>
+ *      <li>(9) NOT_EXISTS_KEY: No existe la clave.</li>
+ * </ul>
+ * 
  * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
