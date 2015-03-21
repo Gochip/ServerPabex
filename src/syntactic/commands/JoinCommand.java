@@ -9,10 +9,10 @@ import syntactic.GenericCommand;
  * Esta clase analiza y determina si una cadena de comando JOIN está bien
  * formada.
  * 
- * JOIN 'id_group' <-p 'clave'>: (resp, error, error_info, warning, warning_info)
+ * JOIN 'id_group' [-p 'clave']: (resp, error, error_info, warning, warning_info)
  * 
  * 
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class JoinCommand implements Command {

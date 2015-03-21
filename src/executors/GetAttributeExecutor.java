@@ -5,7 +5,7 @@ import syntactic.commands.GetAttributeCommand;
 
 /**
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class GetAttributeExecutor extends Executor {

@@ -15,7 +15,7 @@ import com.server.ServerController;
  *
  * TABLA DE ERRORES NOT_EXISTS_CLIENT(7): No existe el cliente destinatario
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class MessageClientExecutor extends Executor {

@@ -9,8 +9,8 @@ import com.server.Group;
 import com.server.ServerController;
 
 /**
- * Ejecutor del comando MESSAGE_GROUP 'id_group' 'mensaje' <-e 'excluido1,
- * excluido2, ..., excluidoN'>: (error, error_info, warning, warning_info,
+ * Ejecutor del comando MESSAGE_GROUP 'id_group' 'mensaje' [-e 'excluido1,
+ * excluido2, ..., excluidoN']: (error, error_info, warning, warning_info,
  * count)
  *
  * Manda el mensaje a todos los integrantes del grupo excluyéndose a sí mismo u
@@ -27,14 +27,14 @@ import com.server.ServerController;
  * grupo.</p>
  *
  * <h2>KEYS:</h2>
- * <p><<code>error</code>></p>
- * <p><<code>error_info</code>></p>
- * <p><<code>warning</code>></p>
- * <p><<code>warning_info</code>></p>
- * <p>[< code>count</code>]: Cantidad de destinarios del mensaje.</p>
+ * <p><code>error</code></p>
+ * <p><code>error_info</code></p>
+ * <p><code>warning</code></p>
+ * <p><code>warning_info</code></p>
+ * <p><code>count</code>: Cantidad de destinarios del mensaje.</p>
  *
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class MessageGroupExecutor extends Executor {

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Parisi Germán & Barrionuevo Diego
+ * @author Parisi Germán y Barrionuevo Diego
  * @version 1.0
  */
 public class ObjectDifusion implements Serializable {

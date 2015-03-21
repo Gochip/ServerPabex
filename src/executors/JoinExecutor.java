@@ -8,7 +8,7 @@ import com.server.ServerController;
 import executors.response.InformationResponse;
 
 /**
- * JOIN 'id_group' <-p 'clave'>: (id_group, error, error_info)
+ * JOIN 'id_group' [-p 'clave']: (id_group, error, error_info)
  *
  *
  * Si el comando tuvo éxito entonces la clave error y error_info es null.

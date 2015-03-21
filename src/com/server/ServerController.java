@@ -40,7 +40,6 @@ public class ServerController implements Fachada{
     /**
      *
      * @param cr Cliente
-     * @return true
      */
     public void addClient(ClientRunnable cr) {
         assert cr != null;

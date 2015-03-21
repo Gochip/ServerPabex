@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
  * Clase para la difusión de una imagen en un grupo. Se envía a todos los
  * clientes del grupo
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class ImageDifusion implements java.io.Serializable {

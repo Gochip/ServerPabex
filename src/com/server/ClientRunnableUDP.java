@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Parisi Germán &  Barrionuevo Diego
+ * @author Parisi Germán y Barrionuevo Diego
  * @version 1.0
  */
 public class ClientRunnableUDP implements Runnable {

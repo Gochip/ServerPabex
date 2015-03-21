@@ -13,7 +13,7 @@ import java.util.List;
  * 
  * Si el cliente era integrante del algún grupo entonces abandona el grupo.
  * 
- * @author Parisi Germán y  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class DisconnectExecutor extends Executor {

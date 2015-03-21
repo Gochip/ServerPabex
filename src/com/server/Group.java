@@ -7,7 +7,7 @@ import java.util.HashMap;
  * Clase que representa un grupo en el servidor.
  *
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class Group {
@@ -51,7 +51,7 @@ public class Group {
 
     /**
      *
-     * @param cr
+     * @param cr es el cliente
      * @return true si el cliente ya está conectado al grupo. False en caso
      * contrario.
      */

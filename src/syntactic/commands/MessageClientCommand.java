@@ -8,7 +8,7 @@ import syntactic.GenericCommand;
 /**
  * MESSAGE_CLIENT 'id_client' 'texto': (resp, error, error_info)
  * 
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class MessageClientCommand implements Command{

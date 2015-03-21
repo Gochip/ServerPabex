@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * La clase padre de cada Respuesta del servidor a los clientes
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class Response<T extends java.io.Serializable> implements java.io.Serializable, Cloneable {

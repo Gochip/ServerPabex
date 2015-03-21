@@ -10,7 +10,7 @@ import syntactic.GenericCommand;
  * 
  * SHOW_GROUPS : (id_groups, xxx_group_name, xxx_id_admin, xxx_max_num)
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class ShowGroupsCommand implements Command {

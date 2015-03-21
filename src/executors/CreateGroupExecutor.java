@@ -6,9 +6,9 @@ import com.server.Group;
 import com.server.ServerController;
 
 /**
- * <code>CREATE_GROUP 'nombre_grupo' <-p 'clave'> <-n 'numero_maxímo'> <-f 'yes|no'>: (id_group)</code>
+ * <code>CREATE_GROUP 'nombre_grupo' [-p 'clave'] [-n 'numero_maxímo'] [-f 'yes|no']: (id_group)</code>
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y  Bertola Federico
  * @version 1.1
  */
 public class CreateGroupExecutor extends Executor {

@@ -9,7 +9,7 @@ import java.util.TreeMap;
  * NOMBRE_COMANDO opción_fija_1 opción_fija_2 ... opción_fija_n -o1 opc_var_1
  * -o2 opc_var_2 ... -on opc_var_n
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class GenericCommand {
@@ -52,7 +52,7 @@ public class GenericCommand {
     }
 
     /**
-     *
+     * @param type es el tipo de variable
      * @param name es el nombre de la opción variable.
      */
     public void addOptionVariable(String name, Type type) {

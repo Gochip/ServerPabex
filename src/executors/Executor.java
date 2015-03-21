@@ -4,7 +4,7 @@ import com.server.ClientRunnable;
 
 /**
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public abstract class Executor {

@@ -6,8 +6,8 @@ import syntactic.Command;
 import syntactic.GenericCommand;
 
 /**
- * MESSAGE_GROUP 'id_group' 'mensaje' <-e 'excluido1, excluido2, ..., excluidoN'>: (error, error_info, warning, warning_info, count)
- * @author Parisi Germán & Bertola Federico
+ * MESSAGE_GROUP 'id_group' 'mensaje' [-e 'excluido1, excluido2, ..., excluidoN']: (error, error_info, warning, warning_info, count)
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class MessageGroupCommand implements Command {

@@ -6,10 +6,10 @@ import syntactic.Command;
 import syntactic.GenericCommand;
 
 /**
- * CREATE_GROUP 'nombre_grupo' <-p 'clave'> <-n 'numero_maxímo'>: (resp, error,
+ * CREATE_GROUP 'nombre_grupo' [-p 'clave'] [-n 'numero_maxímo']: (resp, error,
  * error_info)
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class CreateGroupCommand implements Command {

@@ -9,10 +9,10 @@ import syntactic.commands.AddAttributeCommand;
 /**
  * ADD_ATTRIBUTE 'key1, key2, key3' 'value1, value2, value3' 'YES|NO'
  *
- * YES => Avisar a los demás. NO => No avisar a los demás.
+ * YES: Avisar a los demás. NO: No avisar a los demás.
  *
  *
- * @author Germán Parisi & Bertola Federico
+ * @author Germán Parisi y Bertola Federico
  * @version 1.1
  */
 public class AddAttributeExecutor extends Executor {

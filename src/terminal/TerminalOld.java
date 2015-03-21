@@ -8,7 +8,7 @@ import com.server.ServerController;
 
 /**
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y  Bertola Federico
  * @version 1.0
  */
 public class TerminalOld implements Runnable {

@@ -3,7 +3,7 @@ package com.server;
 /**
  *
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class testChar {

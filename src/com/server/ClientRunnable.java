@@ -25,7 +25,7 @@ import syntactic.Commands;
 /**
  * Mantiene la conexión con el cliente.
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class ClientRunnable implements Runnable {
