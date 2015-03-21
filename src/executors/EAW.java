@@ -4,7 +4,7 @@ package executors;
  * Errors And Warnings.
  *
  * @author Parisi Germán
- * @version 1.1
+ * @version 1.2
  */
 public class EAW {
 
@@ -44,7 +44,7 @@ public class EAW {
             }
 
             public static String getInfo(String idGroup) {
-                return "El grupo está lleno " + idGroup;
+                return "El grupo " + idGroup + " está lleno";
             }
         }
 
@@ -55,7 +55,7 @@ public class EAW {
             }
 
             public static String getInfo() {
-                return "El grupo no acepta duplicados";
+                return "No se puede unir dos veces a un mismo grupo";
             }
         }
 
@@ -77,7 +77,7 @@ public class EAW {
             }
 
             public static String getInfo() {
-                return "La clave es incorrecta: ";
+                return "La clave es incorrecta";
             }
         }
 
