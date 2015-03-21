@@ -9,7 +9,8 @@ import java.util.List;
 import syntactic.commands.LeaveGroupCommand;
 
 /**
- *
+ * LEAVE_GROUP 'id_group'
+ * 
  * @author Parisi Germán
  * @version 1.0
  */
