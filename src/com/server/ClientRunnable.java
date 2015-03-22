@@ -1,13 +1,13 @@
 package com.server;
 
 import com.difusion.ImageDifusion;
-import com.difusion.ObjectDifusion;
+import com.difusion.ObjectDiffusion;
 import executors.DisconnectExecutor;
 import executors.EAW;
 import executors.response.CommandResponse;
 import executors.Executor;
 import executors.ImageDifusionExecutor;
-import executors.ObjectDifusionExecutor;
+import executors.ObjectDiffusionExecutor;
 import executors.response.MessageResponse;
 import executors.Response;
 import executors.response.InformationResponse;
@@ -106,9 +106,9 @@ public class ClientRunnable implements Runnable {
                     ide.client = this;
                     oos.writeObject(ide.execute());
                     oos.flush();
-                } else if (objeto instanceof ObjectDifusion) {
-                    ObjectDifusion objectDifusion = (ObjectDifusion) objeto;
-                    ObjectDifusionExecutor ode = new ObjectDifusionExecutor(objectDifusion);
+                } else if (objeto instanceof ObjectDiffusion) {
+                    ObjectDiffusion objectDifusion = (ObjectDiffusion) objeto;
+                    ObjectDiffusionExecutor ode = new ObjectDiffusionExecutor(objectDifusion);
                     ode.client = this;
                     oos.writeObject(ode.execute());
                     oos.flush();
@@ -198,7 +198,7 @@ public class ClientRunnable implements Runnable {
         }
     }
 
-    public void send(ObjectDifusion object) {
+    public void send(ObjectDiffusion object) {
         try {
             synchronized (oos) {
                 oos.writeObject(object);
