@@ -38,6 +38,7 @@ public class ClientRunnable implements Runnable {
     private ArrayList<Group> groups;
     private Attributes attributes;
     private ClientRunnableUDP udp;
+    private int sendPortUDP;
 
     /**
      *
@@ -142,6 +143,14 @@ public class ClientRunnable implements Runnable {
     @Override
     public int hashCode() {
         return this.clientId.hashCode();
+    }
+    
+    public int getSendPortUDP(){
+        return sendPortUDP;
+    }
+    
+    public void setSendPortUDP(int sendPortUDP){
+        this.sendPortUDP = sendPortUDP;
     }
 
     public ArrayList<Group> getGroups() {

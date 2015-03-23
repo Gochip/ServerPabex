@@ -81,5 +81,6 @@ public class Commands {
         commands.add(new Pair<>("GET_ATTRIBUTE", "syntactic.commands.GetAttributeCommand"));
         commands.add(new Pair<>("REMOVE_ATTRIBUTE", "syntactic.commands.RemoveAttributeCommand"));
         commands.add(new Pair<>("LEAVE_GROUP", "syntactic.commands.LeaveGroupCommand"));
+        commands.add(new Pair<>("CONFIGURE_UDP", "syntactic.commands.ConfigureUDPCommand"));
     }
 }

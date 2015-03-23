@@ -19,10 +19,11 @@ public class ClientRunnableUDP implements Runnable {
 
     private static ClientRunnableUDP me;
     private DatagramSocket datagram;
+    public static int LISTEN_PORT = 6001;
 
     private ClientRunnableUDP() {
         try {
-            datagram = new DatagramSocket(6001);
+            datagram = new DatagramSocket(LISTEN_PORT);
         } catch (SocketException ex) {
             Logger.getLogger(ClientRunnableUDP.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -35,7 +36,7 @@ public class ClientRunnableUDP implements Runnable {
         return me;
     }
 
-    public void sendPacket(String data, InetAddress clientAddress) {
+    public void sendPacket(String data, InetAddress clientAddress, int port) {
         try {
             byte[] buffer = new byte[256];
             byte[] bAux = data.getBytes(Charset.forName("UTF-8"));
@@ -43,7 +44,7 @@ public class ClientRunnableUDP implements Runnable {
             for (int i = bAux.length; i < 256; i++) {
                 buffer[i] = 0;
             }
-            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, clientAddress, 6002);
+            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, clientAddress, port);
             datagram.send(packet);
         } catch (UnknownHostException ex) {
             Logger.getLogger(ClientRunnableUDP.class.getName()).log(Level.SEVERE, null, ex);
@@ -65,7 +66,7 @@ public class ClientRunnableUDP implements Runnable {
             ServerController sc = ServerController.getInstance();
             for (ClientRunnable cr : sc.getGroup(idGroup).getClients()) {
                 if (!cr.getId().equals(idClient)) {
-                    cr.getClientUDP().sendPacket(data, cr.getIPAddress());
+                    cr.getClientUDP().sendPacket(data, cr.getIPAddress(), cr.getSendPortUDP());
                 }
             }
         } catch (IOException ex) {

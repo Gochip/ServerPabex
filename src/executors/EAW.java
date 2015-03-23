@@ -146,6 +146,16 @@ public class EAW {
                 return "No existe el cliente '" + idClient + "' en el grupo '" + idGroup + "'";
             }
         }
+        
+        public static class INCORRECT_PORT {
+            public static int getError(){
+                return 12;
+            }
+            
+            public static String getInfo(int port){
+                return "El puerto es incorrecto: " + port;
+            }
+        }
     }
 
     public static class WAR {
