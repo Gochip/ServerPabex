@@ -9,32 +9,33 @@ import com.server.Group;
 import com.server.ServerController;
 
 /**
- * Ejecutor del comando MESSAGE_GROUP 'id_group' 'mensaje' <-e 'excluido1,
- * excluido2, ..., excluidoN'>: (error, error_info, warning, warning_info,
- * count)
+ * MESSAGE_GROUP 'id_group' 'mensaje' [-e 'excluido1, excluido2, ..., excluidoN']: 
+ * (error, error_info, warning, warning_info, count)
  *
  * Manda el mensaje a todos los integrantes del grupo excluyéndose a sí mismo u
  * opcionalmente a otros.
  *
- * <h2>TABLA DE ERRORES:</h2>
- * <p>NOT_EXISTS_GROUP (1): El grupo indicado no existe.</p>
- * <p>NOT_CLIENT_IN_GROUP (2): El cliente que ejecutó este comando no pertenece
- * al grupo.</p>
+ * TABLA DE ERRORES
+ * <ul>
+ *      <li>(1) NOT_EXISTS_GROUP: El grupo indicado no existe.</li>
+ *      <li>(2) NOT_CLIENT_IN_GROUP: El cliente que ejecutó este comando no pertenece al grupo.</li>
+ * </ul>
  *
- * <h2>TABLA DE PELIGROS:</h2>
- * <p>INVALID_CLIENT (1): Un cliente excluído no existe.</p>
- * <p>NOT_EXISTS_CLIENT_IN_GROUP (2): Un cliente excluído no pertenece al
- * grupo.</p>
+ * TABLA DE PELIGROS
+ * <ul>
+ *      <li>(1) INVALID_CLIENT: Un cliente excluído no existe.</li>
+ *      <li>(2) NOT_EXISTS_CLIENT_IN_GROUP: Un cliente excluído no pertenece al grupo.</li>
+ * </ul>
  *
- * <h2>KEYS:</h2>
- * <p><<code>error</code>></p>
- * <p><<code>error_info</code>></p>
- * <p><<code>warning</code>></p>
- * <p><<code>warning_info</code>></p>
- * <p>[< code>count</code>]: Cantidad de destinarios del mensaje.</p>
+ * RESPUESTAS
+ * <p><code>error</code></p>
+ * <p><code>error_info</code></p>
+ * <p><code>warning</code></p>
+ * <p><code>warning_info</code></p>
+ * <p><code>count</code>: Cantidad de destinarios del mensaje.</p>
  *
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class MessageGroupExecutor extends Executor {
@@ -97,6 +98,8 @@ public class MessageGroupExecutor extends Executor {
                     cr.send(mr);
                 }
             }
+        }else{
+            resp.addOption("count", "0");
         }
         return resp;
     }

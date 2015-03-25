@@ -2,7 +2,7 @@ package syntactic;
 
 /**
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class Pair<T, V> {

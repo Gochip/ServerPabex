@@ -3,7 +3,7 @@ package com.stat;
 /**
  * SINGLETON
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class CounterStat {

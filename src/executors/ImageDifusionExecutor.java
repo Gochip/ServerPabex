@@ -17,7 +17,7 @@ import executors.response.CommandResponse;
  * group_size : Cantidad de clientes del grupo.
  * 
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class ImageDifusionExecutor extends Executor {

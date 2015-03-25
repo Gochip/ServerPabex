@@ -63,7 +63,7 @@ public class Server {
     /**
      * Retorna el ServerController al cual se puede utilizar para obtener los
      * datos actuales e históricos del servidor.
-     * @return 
+     * @return el controlador
      */
     public Fachada getFachada() {
         return serverController;

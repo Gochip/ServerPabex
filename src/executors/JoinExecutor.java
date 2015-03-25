@@ -8,24 +8,28 @@ import com.server.ServerController;
 import executors.response.InformationResponse;
 
 /**
- * JOIN 'id_group' <-p 'clave'>: (id_group, error, error_info)
+ * JOIN 'id_group' [-p 'clave']: (id_group, error, error_info)
  *
  *
  * Si el comando tuvo éxito entonces la clave error y error_info es null.
  *
- * TABLA DE ERRORES: NOT_EXISTS_GROUP (1): No existe el grupo indicado.
- * GROUP_IS_FULL (3): El grupo está lleno. DUPLICATE_IN_GROUP (4): El cliente ya
- * está conectado al grupo. NOT_PASSWORD (5): Falta determinar la clave.
- * INVALID_KEY (6): La clave es incorrecta.
- *
+ * TABLA DE ERRORES:
+ * <ul>
+ *      <li>(1) NOT_EXISTS_GROUP: No existe el grupo indicado.</li>
+ *      <li>(3) GROUP_IS_FULL: El grupo está lleno.</li>
+ *      <li>(4) DUPLICATE_IN_GROUP: El cliente ya está conectado al grupo.</li>
+ *      <li>(5) NOT_PASSWORD: Falta determinar la clave.</li>
+ *      <li>(6) INVALID_KEY: La clave es incorrecta.</li>
+ * </ul>
+ * 
  * KEYS: <code>id_group</code>: Id del grupo al que te uniste.
  *
- * @author Parisi Germán &  Bertola Federico
- * @version 1.0
+ * @author Parisi Germán y Bertola Federico
+ * @version 1.1
  */
 public class JoinExecutor extends Executor {
 
-    private JoinCommand cmd;
+    private final JoinCommand cmd;
 
     public JoinExecutor(JoinCommand cmd) {
         this.cmd = cmd;

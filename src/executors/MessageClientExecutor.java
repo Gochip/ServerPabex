@@ -11,11 +11,16 @@ import com.server.ClientRunnable;
 import com.server.ServerController;
 
 /**
- * MESSAGE_CLIENT 'id_client' 'texto': (error, error_info)
+ * MESSAGE_CLIENT 'id_client' 'mensaje': (error, error_info)
  *
- * TABLA DE ERRORES NOT_EXISTS_CLIENT(7): No existe el cliente destinatario
+ * TABLA DE ERRORES
+ * <ul>
+ *      <li>
+ *          NOT_EXISTS_CLIENT(7): No existe el cliente destinatario.
+ *      </li>
+ * </ul>
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class MessageClientExecutor extends Executor {

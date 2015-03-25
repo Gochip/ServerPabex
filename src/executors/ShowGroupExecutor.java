@@ -8,21 +8,25 @@ import java.util.ArrayList;
 import syntactic.commands.ShowGroupCommand;
 
 /**
- * Muestra los datos de un grupo.
+ * Retorna los datos de un grupo.
  *
- *
+ * 
  * SHOW_GROUP id_group : (id_clients, xxx_name, xxx_ip, id_admin, max_num,
- * is_private, error, error_info)
- * <br />
- * TABLA DE ERRORES <br />
- * NOT_EXISTS_GROUP(1)
+ * is_private, error, error_info, name)
+ * 
+ * Si el comando tuvo éxito entonces la clave error y error_info es null.
+ * 
+ * TABLA DE ERRORES
+ * <ul>
+ *      <li>(1) NOT_EXISTS_GROUP: No existe el grupo indicado.</li>
+ * </ul>
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class ShowGroupExecutor extends Executor {
 
-    private ShowGroupCommand cmd;
+    private final ShowGroupCommand cmd;
 
     public ShowGroupExecutor(ShowGroupCommand cmd) {
         this.cmd = cmd;
@@ -51,6 +55,7 @@ public class ShowGroupExecutor extends Executor {
         cr.addOption(c.getId() + "_name", c.getAttributes().getAttribute("name"));
         cr.addOption(c.getId() + "_ip", c.getIP());
         cr.addOption("id_admin", grupo.getClientAdmin().getId());
+        cr.addOption("name", grupo.getGroupName());
         cr.addOption("max_num", String.valueOf(grupo.getMaxNum()));
         cr.addOption("is_private", String.valueOf(grupo.isPrivate()));
         cr.addOption("id_clients", sb.toString());

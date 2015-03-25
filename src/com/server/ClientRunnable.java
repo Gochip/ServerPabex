@@ -1,13 +1,13 @@
 package com.server;
 
 import com.difusion.ImageDifusion;
-import com.difusion.ObjectDifusion;
+import com.difusion.ObjectDiffusion;
 import executors.DisconnectExecutor;
 import executors.EAW;
 import executors.response.CommandResponse;
 import executors.Executor;
 import executors.ImageDifusionExecutor;
-import executors.ObjectDifusionExecutor;
+import executors.ObjectDiffusionExecutor;
 import executors.response.MessageResponse;
 import executors.Response;
 import executors.response.InformationResponse;
@@ -25,7 +25,7 @@ import syntactic.Commands;
 /**
  * Mantiene la conexión con el cliente.
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class ClientRunnable implements Runnable {
@@ -38,6 +38,7 @@ public class ClientRunnable implements Runnable {
     private ArrayList<Group> groups;
     private Attributes attributes;
     private ClientRunnableUDP udp;
+    private int sendPortUDP;
 
     /**
      *
@@ -106,9 +107,9 @@ public class ClientRunnable implements Runnable {
                     ide.client = this;
                     oos.writeObject(ide.execute());
                     oos.flush();
-                } else if (objeto instanceof ObjectDifusion) {
-                    ObjectDifusion objectDifusion = (ObjectDifusion) objeto;
-                    ObjectDifusionExecutor ode = new ObjectDifusionExecutor(objectDifusion);
+                } else if (objeto instanceof ObjectDiffusion) {
+                    ObjectDiffusion objectDifusion = (ObjectDiffusion) objeto;
+                    ObjectDiffusionExecutor ode = new ObjectDiffusionExecutor(objectDifusion);
                     ode.client = this;
                     oos.writeObject(ode.execute());
                     oos.flush();
@@ -142,6 +143,14 @@ public class ClientRunnable implements Runnable {
     @Override
     public int hashCode() {
         return this.clientId.hashCode();
+    }
+    
+    public int getSendPortUDP(){
+        return sendPortUDP;
+    }
+    
+    public void setSendPortUDP(int sendPortUDP){
+        this.sendPortUDP = sendPortUDP;
     }
 
     public ArrayList<Group> getGroups() {
@@ -198,7 +207,7 @@ public class ClientRunnable implements Runnable {
         }
     }
 
-    public void send(ObjectDifusion object) {
+    public void send(ObjectDiffusion object) {
         try {
             synchronized (oos) {
                 oos.writeObject(object);

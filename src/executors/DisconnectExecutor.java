@@ -9,8 +9,11 @@ import executors.response.InformationResponse;
 import java.util.List;
 
 /**
- *
- * @author Parisi Germán &  Bertola Federico
+ * Desconecta a un cliente del servidor.
+ * 
+ * Si el cliente era integrante del algún grupo entonces abandona el grupo.
+ * 
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class DisconnectExecutor extends Executor {

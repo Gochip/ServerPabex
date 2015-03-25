@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Parisi Germán &  Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class CommandResponse extends Response<String> {

@@ -14,8 +14,8 @@ import com.server.ServerController;
  *
  * Referencias: xxx_nocc: Number_of_connected_clients
  *
- * @author Parisi Germán &  Bertola Federico
- * @version 1.1
+ * @author Parisi Germán y Bertola Federico
+ * @version 1.2
  */
 public class ShowGroupsExecutor extends Executor {
 
@@ -36,7 +36,8 @@ public class ShowGroupsExecutor extends Executor {
         if (col.isEmpty()) {
             response.addValue("id_groups", null);
         } else {
-            response.addValue("id_groups", sbIds.toString());
+            String ids = sbIds.substring(0, sbIds.length()-1);
+            response.addValue("id_groups", ids);
         }
         return response;
     }

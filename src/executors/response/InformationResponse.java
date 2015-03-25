@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.0
  */
 public class InformationResponse extends Response<String> {

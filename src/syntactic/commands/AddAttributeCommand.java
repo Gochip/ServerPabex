@@ -7,7 +7,7 @@ import syntactic.GenericCommand;
 
 /**
  *
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class AddAttributeCommand implements Command {

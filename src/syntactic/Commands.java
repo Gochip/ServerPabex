@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  * 
  * Fábrica de comandos. Recibe una cadena y devuelve el comando asociado.
  * 
- * @author Parisi Germán & Bertola Federico
+ * @author Parisi Germán y Bertola Federico
  * @version 1.1
  */
 public class Commands {
@@ -57,6 +57,7 @@ public class Commands {
 
     /**
      *
+     * @param c Es la cadena comando.
      * @return el comando si esta bien formado, caso contrario retorna
      * <code>null</code>
      */
@@ -80,5 +81,6 @@ public class Commands {
         commands.add(new Pair<>("GET_ATTRIBUTE", "syntactic.commands.GetAttributeCommand"));
         commands.add(new Pair<>("REMOVE_ATTRIBUTE", "syntactic.commands.RemoveAttributeCommand"));
         commands.add(new Pair<>("LEAVE_GROUP", "syntactic.commands.LeaveGroupCommand"));
+        commands.add(new Pair<>("CONFIGURE_UDP", "syntactic.commands.ConfigureUDPCommand"));
     }
 }
