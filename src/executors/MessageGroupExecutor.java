@@ -93,6 +93,7 @@ public class MessageGroupExecutor extends Executor {
             MessageResponse mr = new MessageResponse();
             mr.addText(cmd.getText());
             mr.addId(client.getId());
+            mr.addIdGroup(idGroup);
             for (ClientRunnable cr : group.getClients()) {
                 if (!clientsToExclude.contains(cr)) {
                     cr.send(mr);

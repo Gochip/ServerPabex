@@ -17,8 +17,16 @@ public class MessageResponse extends Response<String>{
         super.addValue("id", id);
     }
     
+    public void addIdGroup(String id){
+        super.addValue("id_group", id);
+    }
+    
     public String getId(){
         return super.getValue("id");
+    }
+    
+    public String getIdGroup(){
+        return super.getValue("id_group");
     }
     
     public void addText(String text){
